@@ -1,7 +1,10 @@
 import torch
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
 
-model = GPT2LMHeadModel.from_pretrained("gpt2", torchscript=True, device_map='cpu', load_in_4bit=True, _fast_init=True).eval()
+#model = GPT2LMHeadModel.from_pretrained("gpt2", torchscript=True, device_map='cpu', load_in_4bit=True, _fast_init=True).eval()
+model = GPT2LMHeadModel.from_pretrained("gpt2", torchscript=True, device_map='cpu',
+                                        #load_in_4bit=True,
+                                        _fast_init=True).eval()
 
 # tokenizer
 tokenizer = GPT2Tokenizer.from_pretrained("gpt2")
